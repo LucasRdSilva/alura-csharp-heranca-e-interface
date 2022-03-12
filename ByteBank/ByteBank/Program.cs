@@ -4,6 +4,10 @@
 
 // 10-03-2022 - Construtores e objetos alterados para atender as alterações de Herança e Polimorfismo
 
+// 11-03-2022 - Adaptando após implementações nos construores e e modificador de visibilidade
+
+// 11-03-2022 - Trabalhando com classe abstrata e organizando código.
+
 #endregion
 
 using ByteBank.Funcionarios;
@@ -20,31 +24,33 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-
-            Funcionario carlos = new Funcionario();
-            carlos.Nome = "Carlos";
-            carlos.CPF = "546.879.157-20";
-            carlos.Salario = 2000;
-
-            gerenciador.Registrar(carlos);
-
-            Diretor roberta = new Diretor();
-            roberta.Nome = "Roberta";
-            roberta.CPF = "454.658.148-3";
-            roberta.Salario = 5000;
-
-            gerenciador.Registrar(roberta);
-
-            Console.WriteLine("Nome: " + carlos.Nome);
-            Console.WriteLine("Bonificação: " + carlos.GetBonificacao());
-
-            Console.WriteLine("Nome: " + roberta.Nome);
-            Console.WriteLine("Bonificação: " + roberta.GetBonificacao());
-
-            Console.WriteLine("Total de Bonificações: " + gerenciador.GetTotalBonificacao());
+            CalcularBonificacao();
 
             Console.ReadLine();
+        }
+
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+
+            Designer pedro = new Designer("833.222.048-39");
+            pedro.Nome = "Pedro";
+
+            Diretor roberta = new Diretor("159.753.398-04");
+            roberta.Nome = "Roberta";
+
+            Auxiliar igor = new Auxiliar("981.198.778-53");
+            igor.Nome = "Igor";
+
+            GerenteDeConta camila = new GerenteDeConta("326.985.628-89");
+            camila.Nome = "Camila";
+
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(camila);
+
+            Console.WriteLine("Total de Bonificações " + gerenciadorBonificacao.GetTotalBonificacao());
         }
     }
 }

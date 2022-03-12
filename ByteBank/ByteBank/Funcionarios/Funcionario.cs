@@ -4,6 +4,10 @@
 
 // 10-03-2022 - Tornando o método GetBonificacao virtual
 
+// 11-03-2022 - Trabalhando com construtores e e modificador de visibilidade
+
+// 11-03-2022 - Trabalhando com classe abstrata
+
 #endregion
 
 using System;
@@ -14,20 +18,41 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
 
         #region Propriedades
 
+        public static int TotalDeFuncionarios { get; private set; }
+
         public string Nome { get; set; }
 
-        public string CPF { get; set; }
+        public string CPF { get; private set; }
 
-        public double Salario { get; set; }
+        public double Salario { get; protected set; }
+
+        #endregion
+
+        #region Construtores
+
+        public Funcionario(double salario, string cpf)
+        {
+            Console.WriteLine("Criando um Funcionário.");
+
+            CPF = cpf;
+            Salario = salario;
+            
+            TotalDeFuncionarios++;
+        }
 
         #endregion
 
         #region Métodos
+
+        public virtual void AumentarSalario()
+        {
+            Salario *= 1.1;
+        }
 
         public virtual double GetBonificacao()
         {
