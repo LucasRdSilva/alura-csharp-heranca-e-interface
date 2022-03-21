@@ -8,6 +8,8 @@
 
 // 11-03-2022 - Trabalhando com classe abstrata
 
+// 21-03-2022 - Trabalhando com métodos abstratos
+
 #endregion
 
 using System;
@@ -49,15 +51,9 @@ namespace ByteBank.Funcionarios
 
         #region Métodos
 
-        public virtual void AumentarSalario()
-        {
-            Salario *= 1.1;
-        }
+        public abstract void AumentarSalario();
 
-        public virtual double GetBonificacao()
-        {
-            return Salario * 0.10;
-        }
+        public abstract double GetBonificacao();
 
         #endregion
 
