@@ -8,8 +8,11 @@
 
 // 11-03-2022 - Trabalhando com classe abstrata
 
+// 21-03-2022 - Alterando para herança de classe autenticável
+
 #endregion
 
+using ByteBank.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +21,11 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Funcionario
+    public class Diretor : Autenticavel
     {
 
         #region Propriedades
+
 
         #endregion
 
@@ -45,6 +49,7 @@ namespace ByteBank.Funcionarios
         {
             return Salario * 0.5;
         }
+
 
         #endregion
 

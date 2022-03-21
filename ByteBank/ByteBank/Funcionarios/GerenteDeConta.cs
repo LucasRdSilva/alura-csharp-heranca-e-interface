@@ -1,9 +1,11 @@
 ﻿#region ChangeLog
 
 // 11-03-2022 - Implementação Inicial - Classes abstratas
+// 21-03-2022 - Alterando para herança de classe autenticável
 
 #endregion
 
+using ByteBank.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class GerenteDeConta : Funcionario
+    public class GerenteDeConta : Autenticavel
     {
         #region Propriedades
 
