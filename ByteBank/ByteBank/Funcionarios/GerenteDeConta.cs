@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class GerenteDeConta : Autenticavel
+    public class GerenteDeConta : FuncionarioAutenticavel
     {
         #region Propriedades
 

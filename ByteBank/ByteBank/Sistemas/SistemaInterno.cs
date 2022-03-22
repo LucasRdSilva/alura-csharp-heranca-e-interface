@@ -2,6 +2,8 @@
 
 // 21-03-2022 - Implementação Inicial
 
+// 21-03-2022 - Alterando método para utilizar interface.
+
 #endregion
 
 using ByteBank.Funcionarios;
@@ -16,7 +18,7 @@ namespace ByteBank.Sistemas
     public class SistemaInterno
     {
 
-        public bool Logar(Autenticavel funcionario, string senha)
+        public bool Logar(IAutenticavel funcionario, string senha)
         {
             bool usuarioAutenticado = funcionario.Autenticar(senha);
 

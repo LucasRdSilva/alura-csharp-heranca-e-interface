@@ -10,6 +10,8 @@
 
 // 21-03-2022 - Alterando para herança de classe autenticável
 
+// 21-03-2022 - Alterando para herança de classe com interface
+
 #endregion
 
 using ByteBank.Sistemas;
@@ -21,7 +23,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Autenticavel
+    public class Diretor : FuncionarioAutenticavel
     {
 
         #region Propriedades
